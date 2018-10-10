@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IAPController">
+            <connections>
+                <outlet property="actIndicator" destination="GAy-7J-qWl" id="gMW-BF-scd"/>
+                <outlet property="actView" destination="gyF-Dg-pC3" id="MJj-dr-leB"/>
+                <outlet property="allFeaturesDesc" destination="9wr-4N-UsQ" id="QdW-zc-thD"/>
+                <outlet property="allFeaturesImg" destination="Fcy-Si-3PD" id="1Vb-lS-W6O"/>
+                <outlet property="amberDesc" destination="dcq-C2-kpk" id="HcB-A1-fi1"/>
+                <outlet property="amberImg" destination="eyU-Wb-s6z" id="iCC-OT-UB9"/>
+                <outlet property="bordersDesc" destination="0F6-RU-hTk" id="3Rd-FN-SQr"/>
+                <outlet property="bordersFeatureImg" destination="ggb-g5-vRb" id="dZJ-BR-XzP"/>
+                <outlet property="buyAmberOut" destination="IBc-cb-mEB" id="7gH-xW-flu"/>
+                <outlet property="buyBordersOut" destination="AJf-Xc-XyQ" id="qdK-bg-gRy"/>
+                <outlet property="buyLightFXOut" destination="P5N-W9-xtu" id="8p2-Vl-yew"/>
+                <outlet property="lightFXdesc" destination="r6t-cu-ZQi" id="w6a-b9-Yd7"/>
+                <outlet property="lightFXimg" destination="Jxc-yx-Hz6" id="TfN-V9-VqU"/>
+                <outlet property="pageControl" destination="LKA-PX-Pm0" id="icK-0B-7ra"/>
+                <outlet property="restorePurchaseOutlet" destination="yiX-9v-clm" id="RYQ-kC-sl7"/>
+                <outlet property="scrollViewIAP" destination="Mbw-kn-ZMl" id="cIG-b3-7pS"/>
+                <outlet property="titleLabel" destination="mcg-ss-Ohy" id="gLc-JI-l46"/>
+                <outlet property="unlockAllOut" destination="EXE-98-m70" id="mGq-Ig-DIo"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AURA STORE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mcg-ss-Ohy">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="19"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="QZJ-Kc-aKq" userLabel="dismissButt">
+                    <rect key="frame" x="275" y="0.0" width="44" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="18"/>
+                    <state key="normal" backgroundImage="dismissButt">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="dismissButt:" destination="-1" eventType="touchUpInside" id="x4b-6d-Ouw"/>
+                    </connections>
+                </button>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" id="Mbw-kn-ZMl">
+                    <rect key="frame" x="0.0" y="44" width="320" height="525"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allfeaturesIAP.png" id="Fcy-Si-3PD">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="all features description" selectable="NO" id="9wr-4N-UsQ" userLabel="allFeatDesc">
+                            <rect key="frame" x="0.0" y="210" width="320" height="88"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.98473590349999995" green="0.98473590349999995" blue="0.98473590349999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.14117647059999999" green="0.1647058824" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="15"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bordersIAP.png" id="ggb-g5-vRb">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Borders Descripton" selectable="NO" id="0F6-RU-hTk" userLabel="bordersDescr">
+                            <rect key="frame" x="0.0" y="210" width="320" height="88"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.98473590353260865" green="0.98473590353260865" blue="0.98473590353260865" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.14117647059999999" green="0.1647058824" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="15"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lightFXIAP.png" id="Jxc-yx-Hz6">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Light FX Description" selectable="NO" id="r6t-cu-ZQi" userLabel="lightFXdescr">
+                            <rect key="frame" x="0.0" y="210" width="320" height="88"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.98473590349999995" green="0.98473590349999995" blue="0.98473590349999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.14117647059999999" green="0.1647058824" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="15"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="amberIAP.png" id="eyU-Wb-s6z">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="amber description..." selectable="NO" id="dcq-C2-kpk" userLabel="amberDescr">
+                            <rect key="frame" x="0.0" y="210" width="320" height="88"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.98473590349999995" green="0.98473590349999995" blue="0.98473590349999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.14117647059999999" green="0.1647058824" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="15"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="AJf-Xc-XyQ" userLabel="buyBordersButt">
+                            <rect key="frame" x="240" y="174" width="80" height="36"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="13"/>
+                            <state key="normal" title="Loading...">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="buyBordersButt:" destination="-1" eventType="touchUpInside" id="pdO-IU-XLe"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="P5N-W9-xtu" userLabel="buyLightFXbutt">
+                            <rect key="frame" x="240" y="174" width="80" height="36"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="13"/>
+                            <state key="normal" title="Loading...">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="buyLightFXButt:" destination="-1" eventType="touchUpInside" id="wfN-7S-6kg"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="IBc-cb-mEB" userLabel="buyAmberButt">
+                            <rect key="frame" x="240" y="174" width="80" height="36"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="13"/>
+                            <state key="normal" title="Loading...">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="buyAmberButt:" destination="-1" eventType="touchUpInside" id="vJz-FC-rGZ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="XD0-Dj-LxC"/>
+                    </connections>
+                </scrollView>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" id="LKA-PX-Pm0">
+                    <rect key="frame" x="140" y="424" width="39" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="pageIndicatorTintColor" red="0.54041550279329609" green="0.54041550279329609" blue="0.54041550279329609" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </pageControl>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="yiX-9v-clm">
+                    <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.2470588235" green="0.68235294120000001" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="18"/>
+                    <state key="normal" title="Restore Purchase">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="restorePurchaseButt:" destination="-1" eventType="touchUpInside" id="fsy-3R-c9i"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="EXE-98-m70">
+                    <rect key="frame" x="0.0" y="459" width="320" height="57"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.82967440642458101" green="0.45590085771640582" blue="0.45878709431067494" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="18"/>
+                    <state key="normal" title="LOADING...">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="buyAllButt:" destination="-1" eventType="touchUpInside" id="Lco-XM-oLH"/>
+                    </connections>
+                </button>
+                <view alpha="0.34999999999999964" contentMode="scaleToFill" id="gyF-Dg-pC3" userLabel="actView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" id="GAy-7J-qWl">
+                            <rect key="frame" x="141" y="222" width="37" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.1824207165" green="0.2145885287" blue="0.25577965559999999" alpha="1" colorSpace="calibratedRGB"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="990" y="42"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="allfeaturesIAP.png" width="640" height="422"/>
+        <image name="amberIAP.png" width="640" height="422"/>
+        <image name="bordersIAP.png" width="640" height="422"/>
+        <image name="dismissButt" width="44" height="44"/>
+        <image name="lightFXIAP.png" width="640" height="422"/>
+    </resources>
+</document>

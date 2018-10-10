@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubscriptionTermsViewController" customModule="Aura" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ymt-9b-cuN">
+                    <rect key="frame" x="57" y="77" width="260" height="514"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GIV-dG-1io">
+                            <rect key="frame" x="8" y="40" width="244" height="466"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <mutableString key="text">About Membership Subscription: 
+
+- Subscription period is 1 year or 1 week. Every 1 year or 1 week your subscription renews. Prices for subscriptions start at $7.99 and will be seen on the confirmation screen. 
+
+- Payment will be charged to iTunes Account at confirmation of purchase. Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period. Account will be charged for renewal within the 24-hours prior to the end of the selected subscription period. 
+
+- Subscriptions may be managed by going to the user's Account Settings after purchase. Any unused portion of a free trial period, if offered, will be forfeited when the user purchases a subscription. 
+
+- Privacy Policy: http://codex.mobi/privacy-policy 
+- Terms of Use: http://codex.mobi/terms-of-use</mutableString>
+                            <color key="textColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                        </textView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggn-Ob-dka">
+                            <rect key="frame" x="219" y="6" width="35" height="35"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" image="Close2"/>
+                            <connections>
+                                <action selector="closeBtnAction" destination="-1" eventType="touchUpInside" id="spP-WD-M3K"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="GIV-dG-1io" firstAttribute="leading" secondItem="Ymt-9b-cuN" secondAttribute="leading" constant="8" id="2OP-ei-TIX"/>
+                        <constraint firstAttribute="trailing" secondItem="ggn-Ob-dka" secondAttribute="trailing" constant="6" id="Bqe-Wg-js3"/>
+                        <constraint firstItem="ggn-Ob-dka" firstAttribute="top" secondItem="Ymt-9b-cuN" secondAttribute="top" constant="6" id="GfV-QA-qyF"/>
+                        <constraint firstAttribute="width" constant="260" id="H0J-nD-zZf"/>
+                        <constraint firstAttribute="bottom" secondItem="GIV-dG-1io" secondAttribute="bottom" constant="8" id="bd0-gF-ZV0"/>
+                        <constraint firstAttribute="trailing" secondItem="GIV-dG-1io" secondAttribute="trailing" constant="8" id="boC-lA-IVI"/>
+                        <constraint firstItem="GIV-dG-1io" firstAttribute="top" secondItem="Ymt-9b-cuN" secondAttribute="top" constant="40" id="gBQ-rE-uLZ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40102332746478875" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Ymt-9b-cuN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3zz-3L-Zps"/>
+                <constraint firstItem="Ymt-9b-cuN" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="9Ih-Nn-jch"/>
+                <constraint firstItem="Ymt-9b-cuN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="77" id="tpw-aF-Y0T"/>
+            </constraints>
+            <point key="canvasLocation" x="25.5" y="52.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Close2" width="35" height="35"/>
+    </resources>
+</document>

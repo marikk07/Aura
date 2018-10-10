@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IntroScreen">
+            <connections>
+                <outlet property="cameraOutlet" destination="OQC-ZN-INO" id="eES-0E-be1"/>
+                <outlet property="copyrightLabel" destination="yyf-Hh-sYi" id="4cN-cX-any"/>
+                <outlet property="introBKG" destination="uNj-Vc-4TP" id="Ibu-kh-Wgo"/>
+                <outlet property="libraryOutlet" destination="HWL-Og-NI3" id="c1P-KV-tBw"/>
+                <outlet property="logoImg" destination="AGK-Ug-Z0X" id="eca-Br-JIe"/>
+                <outlet property="pickFromLibLabel" destination="BVH-40-Tqh" id="PJm-b5-kje"/>
+                <outlet property="storeBUtton" destination="3Y5-rY-K5K" id="8ZK-yi-3bx"/>
+                <outlet property="storeLabel" destination="61K-gd-uOo" id="VMa-W3-wBd"/>
+                <outlet property="takeApicLabel" destination="7HQ-P1-gRs" id="AU7-2C-peL"/>
+                <outlet property="titleLabel" destination="Mxc-wk-H5o" id="khA-E1-XDy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" alpha="0.39999999999999963" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="introBKG3.png" id="uNj-Vc-4TP" userLabel="introBKG">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bif-8Q-Rm6" userLabel="instagramButt">
+                    <rect key="frame" x="10" y="10" width="24" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="instagramLink">
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="instagramButt:" destination="-1" eventType="touchUpInside" id="L3Q-q9-0LC"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="OQC-ZN-INO" userLabel="cameraButt">
+                    <rect key="frame" x="62" y="313" width="36" height="36"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <state key="normal" image="cameraButt">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="cameraButt:" destination="-1" eventType="touchUpInside" id="VMN-LJ-sDh"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="HWL-Og-NI3" userLabel="photoLibraryButt">
+                    <rect key="frame" x="142" y="313" width="36" height="36"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <state key="normal" image="photoLibButt">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="photoLibraryButt:" destination="-1" eventType="touchUpInside" id="Vqm-zB-2dD"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7HQ-P1-gRs">
+                    <rect key="frame" x="52" y="345" width="58" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11.5"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <size key="shadowOffset" width="0.0" height="0.0"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Library" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BVH-40-Tqh">
+                    <rect key="frame" x="118" y="345" width="85" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11.5"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <size key="shadowOffset" width="0.0" height="0.0"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Codex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yyf-Hh-sYi">
+                    <rect key="frame" x="56" y="449" width="209" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11.5"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="3Y5-rY-K5K" userLabel="storeButt">
+                    <rect key="frame" x="221" y="313" width="36" height="36"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <state key="normal" image="storeButt">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="storeButt:" destination="-1" eventType="touchUpInside" id="sBD-dW-AVr"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="61K-gd-uOo">
+                    <rect key="frame" x="203" y="345" width="69" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11.5"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <size key="shadowOffset" width="0.0" height="0.0"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoImg" id="AGK-Ug-Z0X">
+                    <rect key="frame" x="100" y="117" width="120" height="120"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AURA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mxc-wk-H5o">
+                    <rect key="frame" x="0.0" y="237" width="320" height="53"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="32"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <size key="shadowOffset" width="2" height="2"/>
+                </label>
+                <button opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Kdj-K9-ctE" userLabel="infoButton">
+                    <rect key="frame" x="286" y="10" width="24" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="infoButt">
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="infoButt:" destination="-1" eventType="touchUpInside" id="DYQ-tB-JP9"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.14117647059999999" green="0.1647058824" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="39" y="-4"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cameraButt" width="36" height="36"/>
+        <image name="infoButt" width="24" height="24"/>
+        <image name="instagramLink" width="24" height="24"/>
+        <image name="introBKG3.png" width="640" height="1136"/>
+        <image name="logoImg" width="120" height="120"/>
+        <image name="photoLibButt" width="36" height="36"/>
+        <image name="storeButt" width="36" height="36"/>
+    </resources>
+</document>
