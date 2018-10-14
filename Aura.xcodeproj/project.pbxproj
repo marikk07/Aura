@@ -127,6 +127,9 @@
 		8BF3208C1ADEC40A00E7F817 /* bkg13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8BF3207F1ADEC40A00E7F817 /* bkg13.jpg */; };
 		9541F179216E549B003A2471 /* InfoScreenCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9541F177216E549B003A2471 /* InfoScreenCollectionCell.m */; };
 		9541F17A216E549B003A2471 /* InfoScreenCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9541F178216E549B003A2471 /* InfoScreenCollectionCell.xib */; };
+		95FB70032171E3C3006256F7 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 954142C8215BCEF500B97B71 /* OpenSans-Bold.ttf */; };
+		95FB70042171E3C9006256F7 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 954142C9215BCEF500B97B71 /* OpenSans-Regular.ttf */; };
+		95FB70052171E3CB006256F7 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 954142CA215BCEF500B97B71 /* OpenSans-Semibold.ttf */; };
 		B00956091921F41200DFB611 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00956081921F41200DFB611 /* Foundation.framework */; };
 		B009560B1921F41200DFB611 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B009560A1921F41200DFB611 /* CoreGraphics.framework */; };
 		B009560D1921F41200DFB611 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B009560C1921F41200DFB611 /* UIKit.framework */; };
@@ -1385,6 +1388,7 @@
 			files = (
 				B00956631921F4B100DFB611 /* logo.png in Resources */,
 				8BF320851ADEC40A00E7F817 /* bkg6.jpg in Resources */,
+				95FB70052171E3CB006256F7 /* OpenSans-Semibold.ttf in Resources */,
 				729DD25F19D3FCC100D19423 /* cameraRoll.png in Resources */,
 				B00957111921F52D00DFB611 /* Arenq.otf in Resources */,
 				7240B74D19CC6E19005C6566 /* store.png in Resources */,
@@ -1394,6 +1398,7 @@
 				FA95C49E1AC54F2100588D58 /* RemoveWatermarkScreen.xib in Resources */,
 				727848F319DBDE7C0008E820 /* thumb@2x.png in Resources */,
 				B00957281921F52D00DFB611 /* UpperEastSide.ttf in Resources */,
+				95FB70032171E3C3006256F7 /* OpenSans-Bold.ttf in Resources */,
 				FA30850B1FD881B000537C03 /* SubscriptionTermsViewController.xib in Resources */,
 				728A501819DD71D900386223 /* Viafont.ttf in Resources */,
 				727B09631977F8AD0097A153 /* introBKG3.png in Resources */,
@@ -1432,6 +1437,7 @@
 				728A500919DD71D900386223 /* always forever.ttf in Resources */,
 				B009566A1921F4B100DFB611 /* share.png in Resources */,
 				728A500E19DD71D900386223 /* Dolce Vita Light.ttf in Resources */,
+				95FB70042171E3C9006256F7 /* OpenSans-Regular.ttf in Resources */,
 				B00956CB1921F4F500DFB611 /* Localizable.strings in Resources */,
 				B009575D1921F54100DFB611 /* micro_carbon@2x.png in Resources */,
 				722A22D719756F9300567DD0 /* sharpness.png in Resources */,

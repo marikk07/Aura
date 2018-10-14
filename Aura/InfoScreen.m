@@ -4,6 +4,8 @@
 #import "IntroScreen.h"
 #import "Aura-Swift.h"
 #import "InfoScreenCollectionCell.h"
+#import <QuartzCore/QuartzCore.h>
+#import "UIImage+Utility.h"
 
 @interface InfoScreen ()
 
@@ -11,7 +13,8 @@
 @property (strong, nonatomic) NSArray *collectionImages;
 @property (strong, nonatomic) NSArray *collectionTitles;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
-
+@property (weak, nonatomic) IBOutlet UIView *shadowView;
+@property (strong, nonatomic) UIActivityIndicatorView *indicatorView;
 @end
 
 @implementation InfoScreen
@@ -51,12 +54,44 @@
     self.collectionImages = [NSArray arrayWithObjects: [UIImage imageNamed:@"image1"], [UIImage imageNamed:@"image2"], [UIImage imageNamed:@"image3"], [UIImage imageNamed:@"image4"], nil];
     self.collectionTitles = [NSArray arrayWithObjects:@"Photographic Filters", @"Patterns as Backgrounds", @"Premium Stickers", @"Remarkable Fonts", nil];
     
-    self.startButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    self.startButton.titleLabel.numberOfLines = 2;
+    self.shadowView.layer.shadowColor = [[UIColor whiteColor] colorWithAlphaComponent:0.15].CGColor;
+    self.shadowView.layer.shadowOffset = CGSizeMake(0, 10.0f);
+    self.shadowView.layer.shadowOpacity = 1.0f;
+    self.shadowView.layer.shadowRadius = 4.0f;
+    self.shadowView.layer.cornerRadius = 10;
+    self.shadowView.layer.masksToBounds = NO;
+
+    NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    [style setAlignment:NSTextAlignmentCenter];
+    [style setLineBreakMode:NSLineBreakByWordWrapping];
+    
+    UIFont *font1 = [UIFont fontWithName:@"OpenSans-Semibold" size:16.0f];
+    UIFont *font2 = [UIFont fontWithName:@"OpenSans" size:14.0f];
+    
+    
+    NSDictionary *dict1 = @{NSForegroundColorAttributeName:UIColor.whiteColor,
+                            NSFontAttributeName:font1,
+                            NSParagraphStyleAttributeName:style};
+    NSDictionary *dict2 = @{NSForegroundColorAttributeName:UIColor.whiteColor,
+                            NSFontAttributeName:font2,
+                            NSParagraphStyleAttributeName:style};
+    
+    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] init];
+    [attString appendAttributedString:[[NSAttributedString alloc] initWithString:@"TRY FOR FREE\n" attributes:dict1]];
+    [attString appendAttributedString:[[NSAttributedString alloc] initWithString:@"1 week free. Then $7.99/week" attributes:dict2]];
+    
+    
+    [self.startButton setAttributedTitle:attString forState:UIControlStateNormal];
+    [[self.startButton titleLabel] setNumberOfLines:0];
+    [[self.startButton titleLabel] setLineBreakMode:NSLineBreakByWordWrapping];
+    
+    
+    
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
+    
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = self.startButton.bounds;
     gradient.startPoint = CGPointMake(0.0, 0.5);
@@ -64,10 +99,26 @@
     gradient.colors = @[(id)[UIColor colorWithRed:65.0 / 255 green:171.0 / 255 blue:241.0 / 255 alpha:1.0].CGColor, (id)[UIColor colorWithRed:241.0 / 255 green:65.0 / 255 blue:153.0 / 255 alpha:1.0].CGColor];
     [self.startButton.layer insertSublayer:gradient atIndex:0];
     
+    CAGradientLayer *secondGradient = [CAGradientLayer layer];
+    secondGradient.frame = self.view.bounds;
+    secondGradient.colors = @[(id)[UIColor colorWithRed:42.0 / 255 green:47.0 / 255 blue:75.0 / 255 alpha:1.0].CGColor, (id)[UIColor colorWithRed:14.0 / 255 green:17.0 / 255 blue:37.0 / 255 alpha:1.0].CGColor];
+    [self.view.layer insertSublayer:secondGradient atIndex:0];
+
 }
 - (IBAction)startButt:(id)sender {
     __weak typeof(self) weakSelf = self;
+    
+    self.indicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
+    self.indicatorView.layer.cornerRadius = self.indicatorView.bounds.size.width/2;
+    self.indicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    self.indicatorView.center = self.view.center;
+    [self.view addSubview:self.indicatorView];
+    [self.view bringSubviewToFront:self.indicatorView];
+    [self.indicatorView startAnimating];
+    
+    
     [[SubscriptionManager instance] subscribe:^(BOOL success) {
+        [self.indicatorView stopAnimating];
         if (success) {
             [weakSelf goToIntroScreen];
         } else {
