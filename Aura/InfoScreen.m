@@ -6,14 +6,21 @@
 #import "InfoScreenCollectionCell.h"
 #import <QuartzCore/QuartzCore.h>
 #import "UIImage+Utility.h"
+#import "ASBanker.h"
+
+@import StoreKit;
 
 @interface InfoScreen ()
+<
+ASBankerDelegate
+>
 
 @property (nonatomic, strong) IBOutlet UIButton *restoreBtn;
 @property (strong, nonatomic) NSArray *collectionImages;
 @property (strong, nonatomic) NSArray *collectionTitles;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIView *shadowView;
+@property (weak, nonatomic) IBOutlet UILabel *subscribeLabel;
 @property (strong, nonatomic) UIActivityIndicatorView *indicatorView;
 @end
 
@@ -61,30 +68,7 @@
     self.shadowView.layer.cornerRadius = 10;
     self.shadowView.layer.masksToBounds = NO;
 
-    NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-    [style setAlignment:NSTextAlignmentCenter];
-    [style setLineBreakMode:NSLineBreakByWordWrapping];
-    
-    UIFont *font1 = [UIFont fontWithName:@"OpenSans-Semibold" size:16.0f];
-    UIFont *font2 = [UIFont fontWithName:@"OpenSans" size:14.0f];
-    
-    
-    NSDictionary *dict1 = @{NSForegroundColorAttributeName:UIColor.whiteColor,
-                            NSFontAttributeName:font1,
-                            NSParagraphStyleAttributeName:style};
-    NSDictionary *dict2 = @{NSForegroundColorAttributeName:UIColor.whiteColor,
-                            NSFontAttributeName:font2,
-                            NSParagraphStyleAttributeName:style};
-    
-    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] init];
-    [attString appendAttributedString:[[NSAttributedString alloc] initWithString:@"TRY FOR FREE\n" attributes:dict1]];
-    [attString appendAttributedString:[[NSAttributedString alloc] initWithString:@"1 week free. Then $7.99/week" attributes:dict2]];
-    
-    
-    [self.startButton setAttributedTitle:attString forState:UIControlStateNormal];
-    [[self.startButton titleLabel] setNumberOfLines:0];
-    [[self.startButton titleLabel] setLineBreakMode:NSLineBreakByWordWrapping];
-    
+    [self populateIAPDescription];
     
     
 }
@@ -107,15 +91,7 @@
 }
 - (IBAction)startButt:(id)sender {
     __weak typeof(self) weakSelf = self;
-    
-    self.indicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
-    self.indicatorView.layer.cornerRadius = self.indicatorView.bounds.size.width/2;
-    self.indicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
-    self.indicatorView.center = self.view.center;
-    [self.view addSubview:self.indicatorView];
-    [self.view bringSubviewToFront:self.indicatorView];
-    [self.indicatorView startAnimating];
-    
+    [self showIndicator];
     
     [[SubscriptionManager instance] subscribe:^(BOOL success) {
         [self.indicatorView stopAnimating];
@@ -127,6 +103,100 @@
         }
     }];
 }
+
+- (void)showIndicator {
+    self.indicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
+    self.indicatorView.layer.cornerRadius = self.indicatorView.bounds.size.width/2;
+    self.indicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    self.indicatorView.center = self.view.center;
+    [self.view addSubview:self.indicatorView];
+    [self.view bringSubviewToFront:self.indicatorView];
+    [self.indicatorView startAnimating];
+}
+
+-(void)populateIAPDescription {
+    NSString *priceString = nil;
+    
+    ASBanker *banker = [ASBanker sharedInstance];
+    banker.delegate = self;
+
+    [self showIndicator];
+
+    
+    [banker fetchProducts:@[
+                                 // IAP Products List
+                                 @"aura.subscription", //index 0
+                                 @"aura.b.unlockBorders2", // index 1
+                                 @"aura.c.unlockLightFX2", //index 2
+                                 @"aura.e.unlockAmber2" // index 3
+                                 ]];
+}
+
+
+// IAP Product found
+- (void)bankerFoundProducts:(NSArray *)products {
+    
+    if (appDelegate.iapProductsList) {
+        appDelegate.iapProductsList = nil;
+    }
+    [self.indicatorView stopAnimating];
+    NSMutableArray *sortedProducts = [NSMutableArray arrayWithCapacity: 4];
+    [sortedProducts addObjectsFromArray:products];
+    
+    for (SKProduct *product in products) {
+        if ([product.productIdentifier isEqualToString:@"aura.subscription"]) {
+            [sortedProducts replaceObjectAtIndex:0 withObject:product];
+        } else if ([product.productIdentifier isEqualToString:@"aura.b.unlockBorders2"]) {
+            [sortedProducts replaceObjectAtIndex:1 withObject:product];
+        } else if ([product.productIdentifier isEqualToString:@"aura.c.unlockLightFX2"]) {
+            [sortedProducts replaceObjectAtIndex:2 withObject:product];
+        } else if ([product.productIdentifier isEqualToString:@"aura.e.unlockAmber2"]) {
+            [sortedProducts replaceObjectAtIndex:3 withObject:product];
+        }
+    }
+    
+    appDelegate.iapProductsList = sortedProducts;
+    NSString *priceString = nil;
+    if (appDelegate.iapProductsList != nil) {
+        @try {
+            SKProduct *pr = [appDelegate.iapProductsList objectAtIndex:0];
+            priceString = [NSString stringWithFormat:@"$%@", pr.price.stringValue];
+        }
+        @catch (NSException *exception) { }
+    }
+    priceString = priceString ?: @"$49.99";
+
+    NSString *filePath = [[NSBundle mainBundle] pathForResource: @"iAPSubscriptionDescription" ofType:@"txt"];
+    NSString *template = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+    if (template) {
+        template = [template stringByReplacingOccurrencesOfString:@"[PRICE]" withString:priceString];
+        self.subscribeLabel.text = template;
+        ///
+        NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+        [style setAlignment:NSTextAlignmentCenter];
+        [style setLineBreakMode:NSLineBreakByWordWrapping];
+        
+        UIFont *font1 = [UIFont fontWithName:@"OpenSans-Semibold" size:16.0f];
+        UIFont *font2 = [UIFont fontWithName:@"OpenSans" size:14.0f];
+        
+        NSDictionary *dict1 = @{NSForegroundColorAttributeName:UIColor.whiteColor,
+                                NSFontAttributeName:font1,
+                                NSParagraphStyleAttributeName:style};
+        NSDictionary *dict2 = @{NSForegroundColorAttributeName:UIColor.whiteColor,
+                                NSFontAttributeName:font2,
+                                NSParagraphStyleAttributeName:style};
+        
+        NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] init];
+        [attString appendAttributedString:[[NSAttributedString alloc] initWithString:@"TRY FOR FREE\n" attributes:dict1]];
+        [attString appendAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"1 week free. Then %@/week", priceString] attributes:dict2]];
+        [self.startButton setAttributedTitle:attString forState:UIControlStateNormal];
+        [[self.startButton titleLabel] setNumberOfLines:0];
+        [[self.startButton titleLabel] setLineBreakMode:NSLineBreakByWordWrapping];
+        ///
+    }
+}
+
+
 
 - (IBAction)restoreAction:(id)sender {
     __weak typeof(self) weakSelf = self;

@@ -24,6 +24,7 @@
                 <outlet property="scrollView" destination="R2d-2d-OxR" id="dHZ-pZ-L4Y"/>
                 <outlet property="shadowView" destination="bU9-5o-Ayk" id="Fza-pH-gHf"/>
                 <outlet property="startButton" destination="ZDT-c1-ywg" id="Oxo-hs-dSy"/>
+                <outlet property="subscribeLabel" destination="Pwg-6V-u7k" id="jRI-MC-mhG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -108,8 +109,6 @@
                             </constraints>
                             <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="12"/>
                             <state key="normal">
-                                <string key="title">TRY FOR FREE 
-1 week free. Then $7.99/week</string>
                                 <color key="titleColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             </state>
                             <userDefinedRuntimeAttributes>

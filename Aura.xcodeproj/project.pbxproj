@@ -127,6 +127,7 @@
 		8BF3208C1ADEC40A00E7F817 /* bkg13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8BF3207F1ADEC40A00E7F817 /* bkg13.jpg */; };
 		9541F179216E549B003A2471 /* InfoScreenCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9541F177216E549B003A2471 /* InfoScreenCollectionCell.m */; };
 		9541F17A216E549B003A2471 /* InfoScreenCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9541F178216E549B003A2471 /* InfoScreenCollectionCell.xib */; };
+		95EB3C202175170F00312312 /* iAPSubscriptionDescription.txt in Resources */ = {isa = PBXBuildFile; fileRef = 95EB3C1F2175170F00312312 /* iAPSubscriptionDescription.txt */; };
 		95FB70032171E3C3006256F7 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 954142C8215BCEF500B97B71 /* OpenSans-Bold.ttf */; };
 		95FB70042171E3C9006256F7 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 954142C9215BCEF500B97B71 /* OpenSans-Regular.ttf */; };
 		95FB70052171E3CB006256F7 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 954142CA215BCEF500B97B71 /* OpenSans-Semibold.ttf */; };
@@ -391,6 +392,7 @@
 		9541F176216E549B003A2471 /* InfoScreenCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoScreenCollectionCell.h; sourceTree = "<group>"; };
 		9541F177216E549B003A2471 /* InfoScreenCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoScreenCollectionCell.m; sourceTree = "<group>"; };
 		9541F178216E549B003A2471 /* InfoScreenCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoScreenCollectionCell.xib; sourceTree = "<group>"; };
+		95EB3C1F2175170F00312312 /* iAPSubscriptionDescription.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = iAPSubscriptionDescription.txt; sourceTree = "<group>"; };
 		B00956051921F41200DFB611 /* Aura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B00956081921F41200DFB611 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B009560A1921F41200DFB611 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -923,6 +925,7 @@
 		B009560F1921F41200DFB611 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				95EB3C1F2175170F00312312 /* iAPSubscriptionDescription.txt */,
 				847A40941B82859800C75A1E /* LandscapePhoto2.jpg */,
 				72ED43DB1990B8FE00BEDF37 /* bkgs */,
 				B00957881921F57A00DFB611 /* sharingIcons */,
@@ -1352,9 +1355,9 @@
 				ORGANIZATIONNAME = Codex;
 				TargetAttributes = {
 					B00956041921F41200DFB611 = {
-						DevelopmentTeam = UJGFT78W3T;
+						DevelopmentTeam = GKNL95RU72;
 						LastSwiftMigration = 0910;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 1;
@@ -1393,6 +1396,7 @@
 				B00957111921F52D00DFB611 /* Arenq.otf in Resources */,
 				7240B74D19CC6E19005C6566 /* store.png in Resources */,
 				9541F17A216E549B003A2471 /* InfoScreenCollectionCell.xib in Resources */,
+				95EB3C202175170F00312312 /* iAPSubscriptionDescription.txt in Resources */,
 				FA95C4B41AC9886300588D58 /* RateScreen.xib in Resources */,
 				B00957131921F52D00DFB611 /* BebasNeue.otf in Resources */,
 				FA95C49E1AC54F2100588D58 /* RemoveWatermarkScreen.xib in Resources */,
@@ -1720,8 +1724,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UJGFT78W3T;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = GKNL95RU72;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1762,8 +1766,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UJGFT78W3T;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

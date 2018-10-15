@@ -71,7 +71,7 @@ import StoreKit
 private extension SubscriptionManager {
 
     func refreshStatus() {
-        let unlock = UserDefaults.standard.bool(forKey: Consts.subscriptionUnlockKey)
+        let unlock = UserDefaults.standard.bool(forKey: Consts.productId)
         status = unlock ? .active : .inactive
 //        purchasesManager.product(with: Consts.productId) { [weak self] (product) in
 //            guard let strongSelf = self, let product = product else {

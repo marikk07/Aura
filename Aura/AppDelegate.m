@@ -12,6 +12,7 @@
 #import <Crashlytics/Crashlytics.h>
 #import "Aura-Swift.h"
 
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -48,7 +49,9 @@
     infoViewed = [[NSUserDefaults standardUserDefaults] boolForKey:@"infoViewed"];
     NSLog(@"INFOSCREEN: %d", infoViewed);
     
-    if ([SubscriptionManager instance].status == StatusInactive) {
+    SubscriptionManager *manager = [SubscriptionManager instance];
+
+    if (manager.status == StatusInactive) {
         // Opens the Info Screen when the App first starts =======
         _infoScreen = [[InfoScreen alloc]initWithNibName:@"InfoScreen" bundle:nil];
         _infoScreen.isFirstTimeStart = YES;
