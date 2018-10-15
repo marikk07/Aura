@@ -82,11 +82,6 @@
     }
     // show or not show Store
     [self updateCurrencyBalance];
-    
-    //Check description
-    if (self.infoScreenWasShown == NO) {
-        [self checkSubscription];
-    }
 
 }
 
@@ -146,19 +141,6 @@
     }
 }
 
-- (void)checkSubscription {
-    if ([SubscriptionManager instance].status != StatusInactive) {
-        // Opens the Info Screen when the App first starts =======
-        InfoScreen *infoScreen = [[InfoScreen alloc]initWithNibName:@"InfoScreen" bundle:nil];
-        infoScreen.isFirstTimeStart = YES;
-        infoViewed = YES;
-        // Saves the infoViewed as YES
-        [[NSUserDefaults standardUserDefaults] setBool:infoViewed forKey:@"infoViewed"];
-        [self presentViewController:infoScreen animated:YES completion:nil];
-        self.infoScreenWasShown = YES;
-    }
-    
-}
 #pragma mark - BUTTONS ============
 
 

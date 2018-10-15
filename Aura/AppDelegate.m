@@ -48,10 +48,25 @@
     infoViewed = [[NSUserDefaults standardUserDefaults] boolForKey:@"infoViewed"];
     NSLog(@"INFOSCREEN: %d", infoViewed);
     
-    // Opens the Intro Screen when the App first starts =======
-    _introScreen = [[IntroScreen alloc] initWithNibName:@"IntroScreen" bundle:nil];
-    self.window.rootViewController = _introScreen;
-    [self.window makeKeyAndVisible];
+    if ([SubscriptionManager instance].status == StatusInactive) {
+        // Opens the Info Screen when the App first starts =======
+        _infoScreen = [[InfoScreen alloc]initWithNibName:@"InfoScreen" bundle:nil];
+        _infoScreen.isFirstTimeStart = YES;
+        self.window.rootViewController = _infoScreen;
+        [self.window makeKeyAndVisible];
+        
+        infoViewed = YES;
+        // Saves the infoViewed as YES
+        [[NSUserDefaults standardUserDefaults] setBool:infoViewed forKey:@"infoViewed"];
+        
+    } else {
+        
+        // Opens the Intro Screen when the App first starts =======
+        _introScreen = [[IntroScreen alloc] initWithNibName:@"IntroScreen" bundle:nil];
+        self.window.rootViewController = _introScreen;
+        [self.window makeKeyAndVisible];
+        
+    }
     
     [Parse setApplicationId:@"6Hjj7UVkL8k7nfXqsZBA2EzUI1YVNmooxP3wjlTy"
                   clientKey:@"UISVYfyQnGH3iTFXWg32FPigUuhxxHtLO5H42FU3"];
