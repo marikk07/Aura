@@ -73,12 +73,12 @@ private extension SubscriptionManager {
     func refreshStatus() {
         let unlock = UserDefaults.standard.bool(forKey: Consts.productId)
         status = unlock ? .active : .inactive
-//        purchasesManager.product(with: Consts.productId) { [weak self] (product) in
-//            guard let strongSelf = self, let product = product else {
-//                return
-//            }
-//            strongSelf.status = strongSelf.purchasesManager.isSubscriptionActive(product) ? .active : .inactive
-//        }
+        purchasesManager.product(with: Consts.productId) { [weak self] (product) in
+            guard let strongSelf = self, let product = product else {
+                return
+            }
+            strongSelf.status = strongSelf.purchasesManager.isSubscriptionActive(product) ? .active : .inactive
+        }
     }
     
     func stateDidChange() {
@@ -206,12 +206,12 @@ private final class PurchasesManager: NSObject, SKPaymentTransactionObserver {
         }
     }
     
-//    func isSubscriptionActive(_ product: SKProduct) -> Bool {
-//        guard let appStoreReceiptURL = Bundle.main.appStoreReceiptURL, let receiptData = try? Data(contentsOf: appStoreReceiptURL) else { return false }
-//        let json = try? JSONSerialization.jsonObject(with: receiptData, options: .allowFragments)
-//        print(json)
-//        return false
-//    }
+    func isSubscriptionActive(_ product: SKProduct) -> Bool {
+        guard let appStoreReceiptURL = Bundle.main.appStoreReceiptURL, let receiptData = try? Data(contentsOf: appStoreReceiptURL) else { return false }
+        let json = try? JSONSerialization.jsonObject(with: receiptData, options: .allowFragments)
+        print(json)
+        return false
+    }
     
     private func paymentCompleted(_ payment: SKPayment, success: Bool) {
         let purchases = purchaseQueue
