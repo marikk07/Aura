@@ -1355,7 +1355,6 @@
 				ORGANIZATIONNAME = Codex;
 				TargetAttributes = {
 					B00956041921F41200DFB611 = {
-						DevelopmentTeam = GKNL95RU72;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
@@ -1725,7 +1724,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = GKNL95RU72;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

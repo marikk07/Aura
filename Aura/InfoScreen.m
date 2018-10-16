@@ -122,7 +122,6 @@ ASBankerDelegate
 
     [self showIndicator];
 
-    
     [banker fetchProducts:@[
                                  // IAP Products List
                                  @"aura.subscription", //index 0

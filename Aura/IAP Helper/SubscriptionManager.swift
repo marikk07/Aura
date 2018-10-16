@@ -71,14 +71,14 @@ import StoreKit
 private extension SubscriptionManager {
 
     func refreshStatus() {
-        let unlock = UserDefaults.standard.bool(forKey: Consts.productId)
+        let unlock = UserDefaults.standard.bool(forKey: "unlockAll")//UserDefaults.standard.bool(forKey: Consts.subscriptionUnlockKey)
         status = unlock ? .active : .inactive
-        purchasesManager.product(with: Consts.productId) { [weak self] (product) in
-            guard let strongSelf = self, let product = product else {
-                return
-            }
-            strongSelf.status = strongSelf.purchasesManager.isSubscriptionActive(product) ? .active : .inactive
-        }
+//        purchasesManager.product(with: Consts.productId) { [weak self] (product) in
+//            guard let strongSelf = self, let product = product else {
+//                return
+//            }
+//            strongSelf.status = strongSelf.purchasesManager.isSubscriptionActive(product) ? .active : .inactive
+//        }
     }
     
     func stateDidChange() {
