@@ -13,7 +13,6 @@
             <connections>
                 <outlet property="backView" destination="cdN-Al-hac" id="pbE-2W-cD7"/>
                 <outlet property="previewImage" destination="eHE-Yi-Dxc" id="890-YY-aNS"/>
-                <outlet property="unlockAllButton" destination="T3X-PJ-xTM" id="X17-BE-pnf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -294,21 +293,6 @@
                                 <constraint firstItem="FML-PD-Nm7" firstAttribute="leading" secondItem="xZU-5a-ZEk" secondAttribute="leading" constant="8" id="swz-wa-9YX"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="T3X-PJ-xTM" userLabel="UnlockAllButton">
-                            <rect key="frame" x="40" y="430" width="240" height="35"/>
-                            <color key="backgroundColor" red="0.73322629928588867" green="0.27337169647216797" blue="0.31570178270339966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="45" id="emd-N8-aLG"/>
-                                <constraint firstAttribute="width" constant="240" id="pHQ-qq-lsR"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
-                            <state key="normal" title="Unlock PRO Version">
-                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="unlockAllFunctionsButt:" destination="-1" eventType="touchUpInside" id="8Sf-tf-hJW"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -325,7 +309,6 @@
                         <constraint firstItem="rlW-lV-4d3" firstAttribute="leading" secondItem="cdN-Al-hac" secondAttribute="leading" constant="10" id="Qgj-4x-SWx"/>
                         <constraint firstItem="Ud3-sX-COg" firstAttribute="top" secondItem="vTz-rI-ohq" secondAttribute="bottom" constant="17" id="UWs-Gs-Mxg"/>
                         <constraint firstItem="Ud3-sX-COg" firstAttribute="leading" secondItem="cdN-Al-hac" secondAttribute="leading" constant="10" id="VJo-Zs-uOZ"/>
-                        <constraint firstAttribute="centerX" secondItem="T3X-PJ-xTM" secondAttribute="centerX" id="j0t-xw-Gyw"/>
                         <constraint firstAttribute="trailing" secondItem="vTz-rI-ohq" secondAttribute="trailing" id="l9v-th-bwD"/>
                         <constraint firstAttribute="trailing" secondItem="0NZ-Dg-Gtw" secondAttribute="trailing" constant="10" id="mDv-YU-v75"/>
                         <constraint firstItem="vTz-rI-ohq" firstAttribute="top" secondItem="cdN-Al-hac" secondAttribute="top" constant="80" id="oI5-f4-B9M"/>
