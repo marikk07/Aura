@@ -17,30 +17,30 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Load BOOL for IAP =============
-    unlockAmber = YES;
-    unlockAll = YES;
-    unlockBorders = YES;
-    unlockLightFX = YES;
-    unlockWatermarks = YES;
-    
-    [[NSUserDefaults standardUserDefaults] setBool:unlockAll forKey:@"unlockAll"];
-    
-    [[NSUserDefaults standardUserDefaults] setBool:unlockBorders forKey:@"unlockBorders"];
-    
-    [[NSUserDefaults standardUserDefaults] setBool:unlockLightFX forKey:@"unlockLightFX"];
-    
-    [[NSUserDefaults standardUserDefaults] setBool:unlockAmber forKey:@"unlockAmber"];
-    
-    [[NSUserDefaults standardUserDefaults] setBool:unlockWatermarks forKey:@"unlockWatermarks"];
-    
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    /*unlockAmber = [[NSUserDefaults standardUserDefaults] boolForKey:@"unlockAmber"];
-    unlockAll = [[NSUserDefaults standardUserDefaults] boolForKey:@"unlockAll"];
-    unlockBorders = [[NSUserDefaults standardUserDefaults] boolForKey:@"unlockBorders"];
-    unlockLightFX = [[NSUserDefaults standardUserDefaults] boolForKey:@"unlockLightFX"];
-    unlockWatermarks = [[NSUserDefaults standardUserDefaults] boolForKey:@"unlockWatermarks"];*/
+//    // Load BOOL for IAP =============
+//    unlockAmber = YES;
+//    unlockAll = YES;
+//    unlockBorders = YES;
+//    unlockLightFX = YES;
+//    unlockWatermarks = YES;
+//    
+//    [[NSUserDefaults standardUserDefaults] setBool:unlockAll forKey:@"unlockAll"];
+//    
+//    [[NSUserDefaults standardUserDefaults] setBool:unlockBorders forKey:@"unlockBorders"];
+//    
+//    [[NSUserDefaults standardUserDefaults] setBool:unlockLightFX forKey:@"unlockLightFX"];
+//    
+//    [[NSUserDefaults standardUserDefaults] setBool:unlockAmber forKey:@"unlockAmber"];
+//    
+//    [[NSUserDefaults standardUserDefaults] setBool:unlockWatermarks forKey:@"unlockWatermarks"];
+//    
+//    [[NSUserDefaults standardUserDefaults] synchronize];
+//    
+//    /*unlockAmber = [[NSUserDefaults standardUserDefaults] boolForKey:@"unlockAmber"];
+//    unlockAll = [[NSUserDefaults standardUserDefaults] boolForKey:@"unlockAll"];
+//    unlockBorders = [[NSUserDefaults standardUserDefaults] boolForKey:@"unlockBorders"];
+//    unlockLightFX = [[NSUserDefaults standardUserDefaults] boolForKey:@"unlockLightFX"];
+//    unlockWatermarks = [[NSUserDefaults standardUserDefaults] boolForKey:@"unlockWatermarks"];*/
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
