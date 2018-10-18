@@ -604,8 +604,8 @@
 - (IBAction)unlockAllFunctionsButt:(id)sender{
     // open IAP view controller without dialog
     productInt = 0;
-    IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
-    [self presentViewController: iapVC animated:true completion:nil];
+//    IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
+//    [self presentViewController: iapVC animated:true completion:nil];
     
     /*
     [[AdColonyHelper sharedManager] showDialogWithIAPBlockBlock:^{

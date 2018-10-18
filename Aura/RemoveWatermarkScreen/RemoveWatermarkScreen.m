@@ -197,15 +197,15 @@ ASBankerDelegate
 #pragma mark - Action buttons
 - (IBAction)removeWatermarkButt:(id)sender {
     productInt = self.iAPIndex;
-    IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
-    [self presentViewController: iapVC animated:true completion:nil];
+//    IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
+//    [self presentViewController: iapVC animated:true completion:nil];
 
 }
 
 - (IBAction)enableAllFeaturesButt:(id)sender {
     productInt = 0;
-    IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
-    [self presentViewController: iapVC animated:true completion:nil];
+//    IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
+//    [self presentViewController: iapVC animated:true completion:nil];
 
 }
 

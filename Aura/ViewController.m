@@ -148,18 +148,18 @@
 - (void)savePic {
     if(_imageView.image){
         
-        // Add 1 to the sharingViewCounter and save it
-//        sharingViewsCounter++;
-//        [[NSUserDefaults standardUserDefaults] setInteger:sharingViewsCounter forKey:@"sharingViewsCounter"];
-//        [[NSUserDefaults standardUserDefaults] synchronize];
-//        
-//        sharingScreen = [[SharingScreen alloc]initWithNibName:@"SharingScreen" bundle:nil];
-//        
-//        // Passes the Edited Image to the SharingScreen
-//        sharingScreen.imagePassed = _imageView.image;
-//        
-//        sharingScreen.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-//        [self presentViewController:sharingScreen animated:YES completion:nil];
+//         Add 1 to the sharingViewCounter and save it
+        sharingViewsCounter++;
+        [[NSUserDefaults standardUserDefaults] setInteger:sharingViewsCounter forKey:@"sharingViewsCounter"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        sharingScreen = [[SharingScreen alloc]initWithNibName:@"SharingScreen" bundle:nil];
+        
+        // Passes the Edited Image to the SharingScreen
+        sharingScreen.imagePassed = _imageView.image;
+        
+        sharingScreen.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+        [self presentViewController:sharingScreen animated:YES completion:nil];
         
         /*
          // Calls the sharing method showing the Image Preview

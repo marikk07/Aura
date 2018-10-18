@@ -164,9 +164,9 @@
 - (void)showStoreViewController{
     productInt = 0;
     
-    IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
-    iapVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    [self presentViewController: iapVC animated:YES completion:nil];
+//    IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
+//    iapVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+//    [self presentViewController: iapVC animated:YES completion:nil];
 
 }
 
@@ -340,18 +340,18 @@
 - (void)shareImage:(UIImage *)image editor:(CLImageEditor *)editor{
     if(image){
         
-//        // Add 1 to the sharingViewCounter and save it
-//        sharingViewsCounter++;
-//        [[NSUserDefaults standardUserDefaults] setInteger:sharingViewsCounter forKey:@"sharingViewsCounter"];
-//        [[NSUserDefaults standardUserDefaults] synchronize];
-//        
-//        SharingScreen *sharingScreen = [[SharingScreen alloc]initWithNibName:@"SharingScreen" bundle:nil];
-//        
-//        // Passes the Edited Image to the SharingScreen
-//        sharingScreen.imagePassed = image;
-//        
-//        sharingScreen.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-//        [editor presentViewController:sharingScreen animated:YES completion:nil];
+        // Add 1 to the sharingViewCounter and save it
+        sharingViewsCounter++;
+        [[NSUserDefaults standardUserDefaults] setInteger:sharingViewsCounter forKey:@"sharingViewsCounter"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        SharingScreen *sharingScreen = [[SharingScreen alloc]initWithNibName:@"SharingScreen" bundle:nil];
+        
+        // Passes the Edited Image to the SharingScreen
+        sharingScreen.imagePassed = image;
+        
+        sharingScreen.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+        [editor presentViewController:sharingScreen animated:YES completion:nil];
         
         /*
          // Calls the sharing method showing the Image Preview

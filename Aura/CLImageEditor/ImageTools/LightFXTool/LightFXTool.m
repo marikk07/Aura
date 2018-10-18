@@ -280,9 +280,9 @@ static NSString* const kLightFXPathKey = @"lightFXPath";
         // Set productInt for IAP product's recognition;
         productInt = 2;
         
-        IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
-        iapVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-        [self.editor presentViewController: iapVC animated:YES completion:nil];
+//        IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
+//        iapVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+//        [self.editor presentViewController: iapVC animated:YES completion:nil];
 
         /*
         [[AdColonyHelper sharedManager] showDialogWithIAPBlockBlock:^{

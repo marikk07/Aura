@@ -657,9 +657,9 @@ CLImageToolProtocol
           // Open IAPController
           productInt = 3;
           
-          IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
-          iapVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-          [self presentViewController: iapVC animated:YES completion:nil];
+//          IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
+//          iapVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+//          [self presentViewController: iapVC animated:YES completion:nil];
           
           /*
           [[AdColonyHelper sharedManager] showDialogWithIAPBlockBlock:^{
@@ -711,9 +711,9 @@ CLImageToolProtocol
           // Open IAPController
           productInt = 3;
           
-          IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
-          iapVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-          [self presentViewController: iapVC animated:YES completion:nil];
+//          IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
+//          iapVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+//          [self presentViewController: iapVC animated:YES completion:nil];
           
           /*
           [[AdColonyHelper sharedManager] showDialogWithIAPBlockBlock:^{
@@ -779,9 +779,9 @@ CLImageToolProtocol
         // Open IAPController
         productInt = 3;
         
-        IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
-        iapVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-        [self presentViewController: iapVC animated:YES completion:nil];
+//        IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
+//        iapVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+//        [self presentViewController: iapVC animated:YES completion:nil];
     }
     if([title isEqualToString:@"Download"]){
         PFQuery *query = [PFQuery queryWithClassName:@"application"];
