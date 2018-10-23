@@ -647,40 +647,7 @@ CLImageToolProtocol
     
     // NO: IAP not made yet =======
       else if ( ![info.toolName isEqualToString:@"Adjustment"] &&
-                 [info.toolName isEqualToString:@"LoomyFilters"] &&
-               !unlockAmber) {
-          NSLog(@"toolName2: %@", info.toolName);
-          [filterCategContainer removeFromSuperview];
-          adjON = false;
-          
-          // open IAP view controller without dialog
-          // Open IAPController
-          productInt = 3;
-          
-//          IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
-//          iapVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-//          [self presentViewController: iapVC animated:YES completion:nil];
-          
-          /*
-          [[AdColonyHelper sharedManager] showDialogWithIAPBlockBlock:^{
-              // Open IAPController
-              productInt = 3;
-              
-              IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
-              iapVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-              [self presentViewController: iapVC animated:YES completion:nil];
-          }];
-           */
-          
-          //UIAlertView *popup = [[UIAlertView alloc] initWithTitle:@"Unlock filters" message:@"Download our new game and unlock filters" delegate:self cancelButtonTitle:@"No, thanks" otherButtonTitles:@"Download", nil];
-          //[popup show];
-
-      }
-    
-    // YES: IAP made, unlock Amber Filters! =======
-      else if ( ![info.toolName isEqualToString:@"Adjustment"] &&
-               [info.toolName isEqualToString:@"LoomyFilters"] &&
-               unlockAmber) {
+                 [info.toolName isEqualToString:@"LoomyFilters"]) {
           NSLog(@"toolName2: %@", info.toolName);
           [filterCategContainer removeFromSuperview];
           adjON = false;
@@ -691,7 +658,6 @@ CLImageToolProtocol
               self.currentTool = instance;
           }
       }
-    
 //==========================================================*/
 
     
@@ -701,39 +667,9 @@ CLImageToolProtocol
     
     // NO: IAP not made yet =======
       else if (![info.toolName isEqualToString:@"Adjustment"] &&
-               [info.toolName isEqualToString:@"VintyFilters"] &&
-               !unlockAmber) {
+               [info.toolName isEqualToString:@"VintyFilters"]) {
           NSLog(@"toolName2: %@", info.toolName);
-          [filterCategContainer removeFromSuperview];
-          adjON = false;
-          
-          // open IAP view controller without dialog
-          // Open IAPController
-          productInt = 3;
-          
-//          IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
-//          iapVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-//          [self presentViewController: iapVC animated:YES completion:nil];
-          
-          /*
-          [[AdColonyHelper sharedManager] showDialogWithIAPBlockBlock:^{
-              // Open IAPController
-              productInt = 3;
-              
-              IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
-              iapVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-              [self presentViewController: iapVC animated:YES completion:nil];
-          }];
-          */
-          
-          //UIAlertView *popup = [[UIAlertView alloc] initWithTitle:@"Unlock filters" message:@"Download our new game and unlock filters" delegate:self cancelButtonTitle:@"No, thanks" otherButtonTitles:@"Download", nil];
-          //[popup show];
-      }
-    
-    // YES: IAP made, unlock Amber Filters! =======
-      else if (![info.toolName isEqualToString:@"Adjustment"] &&
-               [info.toolName isEqualToString:@"VintyFilters"] &&
-               unlockAmber) {
+
           NSLog(@"toolName2: %@", info.toolName);
           [filterCategContainer removeFromSuperview];
           adjON = false;
@@ -744,13 +680,7 @@ CLImageToolProtocol
               self.currentTool = instance;
           }
       }
-    
     /*==========================================================*/
-    
-
-
-    
-    
     
     // Hide Adjustment tool and show the selected one ===========
     else if ( ![info.toolName isEqualToString:@"Adjustment"] ) {

@@ -269,40 +269,10 @@ static NSString* const kBordersToolBordersPathKey = @"bordersPath";
     NSLog(@"TAG:%ld", (long)view.tag);
 
     NSString *filePath = view.userInfo[@"filePath"];
-    
- 
-    /*====================================================================================
-     NO IAP MADE - open the IAP Controller
-     =====================================================================================*/
-    
-    if (!unlockBorders && view.tag >= 13) {
-        
-        // open IAP view controller without dialog
-        // Set productInt for IAP product's recognition;
-        productInt = 1;
-        
-//        IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
-//        iapVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-//        [self.editor presentViewController: iapVC animated:YES completion:nil];
-        
-        /*
-        [[AdColonyHelper sharedManager] showDialogWithIAPBlockBlock:^{
-            // Set productInt for IAP product's recognition;
-            productInt = 1;
-            
-            IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
-            iapVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-            [self.editor presentViewController: iapVC animated:YES completion:nil];
-        }];
-         */
-    }
 
-    
-    
     /*========================================================================================
      IAP MADE!
      =========================================================================================*/
-    else {
     // if (filePath) {
         
         
@@ -333,7 +303,6 @@ static NSString* const kBordersToolBordersPathKey = @"bordersPath";
         
         [_workingView addSubview:bordersView];
         */
-    }
 }
 
 

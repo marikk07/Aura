@@ -271,35 +271,10 @@ static NSString* const kLightFXPathKey = @"lightFXPath";
     NSString *filePath = view.userInfo[@"filePath"];
 
     
-    /*====================================================================================
-     NO IAP MADE - open the IAP Controller
-     =====================================================================================*/
-    if (!unlockLightFX && view.tag >=5) {
-        
-        // open IAP view controller without dialog
-        // Set productInt for IAP product's recognition;
-        productInt = 2;
-        
-//        IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
-//        iapVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-//        [self.editor presentViewController: iapVC animated:YES completion:nil];
-
-        /*
-        [[AdColonyHelper sharedManager] showDialogWithIAPBlockBlock:^{
-            // Set productInt for IAP product's recognition;
-            productInt = 2;
-            
-            IAPController *iapVC = [[IAPController alloc]initWithNibName:@"IAPController" bundle:nil];
-            iapVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-            [self.editor presentViewController: iapVC animated:YES completion:nil];
-        }];
-         */
-    }
 
     /*========================================================================================
      IAP MADE!
      =========================================================================================*/
-    else {
    //  if (filePath) {
         
          [_workingView removeFromSuperview];
@@ -322,7 +297,6 @@ static NSString* const kLightFXPathKey = @"lightFXPath";
          [_workingView addSubview:lightFXView];
         //[view setScale:0.5];
          [_workingView.superview bringSubviewToFront:sliderContainer];
-     }
     
     if (lightFXView){
         lightFXView.imageView.alpha = opacitySlider.value;
